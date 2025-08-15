@@ -5,4 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    historyApiFallback: true, // Helps in local dev for React Router
+  },
 });

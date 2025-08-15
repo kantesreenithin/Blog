@@ -21,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.0",
     "multer": "^2.0.2",
-    "streamifier": "^0.1.1"
+    "streamifier": "^0.1.1",
+    "url": "^0.11.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
