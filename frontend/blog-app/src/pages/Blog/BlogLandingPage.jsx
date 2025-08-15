@@ -119,7 +119,7 @@ function BlogLandingPage() {
             </div>
           )}
         </div>
-        <div className="col-span-12 md:col-span-3">
+        <div className="col-span-12 md:col-span-3 px-2 md:px-4">
           <TrendingPostsSection />
         </div>
       </div>
