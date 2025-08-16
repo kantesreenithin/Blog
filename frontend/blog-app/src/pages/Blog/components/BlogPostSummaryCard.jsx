@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function BlogPostSummaryCard({
@@ -20,7 +19,7 @@ function BlogPostSummaryCard({
       <img
         src={coverImageUrl}
         alt={title}
-        className="w-full h-64 object-cover"
+        className="w-full sm:aspect-[4/3] md:aspect-[16/9] object-cover rounded-lg"
       />
       <div className="p-4 md:p-6">
         <h2 className="text-base md:text-lg font-bold mb-2 line-clamp-3">

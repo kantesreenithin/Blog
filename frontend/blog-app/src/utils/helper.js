@@ -16,6 +16,32 @@ export const validateEmail = (email) => {
   return regex.test(email);
 };
 
+export const validateStrongPassword = (password) => {
+  const errors = [];
+
+  if (password.length < 8) {
+    errors.push(" at least 8 characters");
+  }
+  if (!/[A-Z]/.test(password)) {
+    errors.push(" an uppercase letter");
+  }
+  if (!/[a-z]/.test(password)) {
+    errors.push(" a lowercase letter");
+  }
+  if (!/[0-9]/.test(password)) {
+    errors.push(" a number");
+  }
+  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    errors.push(" a sepecial character");
+  }
+
+  return {
+    isValid: errors.length === 0,
+    message:
+      errors.length > 0 ? `Password must include ${errors.join(",")}` : "",
+  };
+};
+
 export const getToastMessagesByType = (type) => {
   switch (type) {
     case "edit":

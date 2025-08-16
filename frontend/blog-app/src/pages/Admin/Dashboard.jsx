@@ -40,6 +40,14 @@ function Dashboard() {
     }
   };
 
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good Morning";
+    if (hour < 18) return "Good Afternoon";
+    return "Good Evening";
+  };
+
+  console.log(dashboardData)
   useEffect(() => {
     getDashboardData();
     return () => {};
@@ -52,7 +60,7 @@ function Dashboard() {
             <div>
               <div className="col-span-3">
                 <h2 className="text-xl md:text-2xl font-medium">
-                  Greetings!  {user.name}
+                  {getGreeting()}, {user.name} 👋
                 </h2>
                 <p className="text-xs md:text-[13px] font-medium text-gray-400 mt-1.5">
                   {moment().format("dddd MMM YYYY")}
@@ -63,7 +71,7 @@ function Dashboard() {
               <DashboardSummaryCard
                 icon={<LuGalleryVerticalEnd />}
                 label="Total Posts"
-                value={dashboardData?.stats?.topPosts || 0}
+                value={dashboardData?.stats?.totalPosts || 0}
                 bgColor="bg-sky-100/60"
                 color="text-sky-500"
               />

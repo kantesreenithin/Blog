@@ -64,20 +64,43 @@ function BlogLandingPage() {
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12 md:col-span-9">
           {blogPostList.length > 0 && (
-            <FeaturedBlogPost
-              title={blogPostList[0].title}
-              coverImageUrl={blogPostList[0].coverImageUrl}
-              description={blogPostList[0].content}
-              tags={blogPostList[0].tags}
-              updatedOn={
-                blogPostList[0].updatedAt
-                  ? moment(blogPostList[0].updatedAt).format("Do MMM YYYY")
-                  : "-"
-              }
-              authorName={blogPostList[0].author.name}
-              authProfileImg={blogPostList[0].author.profileImageUrl}
-              onClick={() => handleClick(blogPostList[0])}
-            />
+            <>
+              {/* Mobile view: Render like BlogPostSummaryCard */}
+              <div className="block md:hidden">
+                <BlogPostSummaryCard
+                  title={blogPostList[0].title}
+                  coverImageUrl={blogPostList[0].coverImageUrl}
+                  description={blogPostList[0].content}
+                  tags={blogPostList[0].tags}
+                  updatedOn={
+                    blogPostList[0].updatedAt
+                      ? moment(blogPostList[0].updatedAt).format("Do MMM YYYY")
+                      : "-"
+                  }
+                  authorName={blogPostList[0].author.name}
+                  authProfileImg={blogPostList[0].author.profileImageUrl}
+                  onClick={() => handleClick(blogPostList[0])}
+                />
+              </div>
+
+              {/* Desktop view: Render FeaturedBlogPost */}
+              <div className="hidden md:block">
+                <FeaturedBlogPost
+                  title={blogPostList[0].title}
+                  coverImageUrl={blogPostList[0].coverImageUrl}
+                  description={blogPostList[0].content}
+                  tags={blogPostList[0].tags}
+                  updatedOn={
+                    blogPostList[0].updatedAt
+                      ? moment(blogPostList[0].updatedAt).format("Do MMM YYYY")
+                      : "-"
+                  }
+                  authorName={blogPostList[0].author.name}
+                  authProfileImg={blogPostList[0].author.profileImageUrl}
+                  onClick={() => handleClick(blogPostList[0])}
+                />
+              </div>
+            </>
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {blogPostList.length > 0 &&

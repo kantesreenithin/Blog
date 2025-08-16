@@ -6,7 +6,7 @@ function PrivateRoute({ allowedRoles }) {
   const { user, loading } = useContext(UserContext);
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <Loader/>;
   }
 
   if (!user) {
@@ -20,3 +20,13 @@ function PrivateRoute({ allowedRoles }) {
 }
 
 export default PrivateRoute;
+
+const Loader = () => {
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      <div className="relative w-12 h-12">
+        <div className="absolute w-full h-full rounded-full border-4 border-sky-300 border-t-sky-600 animate-spin"></div>
+      </div>
+    </div>
+  );
+};

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
-import { validateEmail } from "../../utils/helper";
+import { validateEmail, validateStrongPassword } from "../../utils/helper";
 import Input from "../Inputs/Input";
 import LOGO from "../../assets/logo.png";
 import ProfilePhotoSelector from "../Inputs/ProfilePhotoSelector";
@@ -44,6 +44,12 @@ const SignUp = ({ setCurrentPage }) => {
 
     if (!password) {
       setError("Please enter the password");
+      return;
+    }
+
+    const { isValid, message } = validateStrongPassword(password);
+    if (!isValid) {
+      setError(message);
       return;
     }
 

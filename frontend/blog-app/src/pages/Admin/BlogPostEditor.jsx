@@ -61,7 +61,7 @@ function BlogPostEditor({ isEdit }) {
       const aiResponse = await axiosInstance.post(
         API_PATHS.AI.GENERATE_BLOG_POST_IDEAS,
         {
-          topics: "React JS, Next JS, Node JS,React UI Components",
+          topics: "React JS, Next JS, Node JS, MERN STACK Applications, JS",
         }
       );
       const generateIdeas = aiResponse.data;

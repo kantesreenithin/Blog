@@ -117,7 +117,7 @@ function CommentInfoCard({
             </div>
           </div>
         </div>
-
+        {/**post cove image */}
         {!isSubReply && (
           <div className="col-span-12 md:col-span-4 order-1 md:order-2 flex items-center gap-4">
             <img

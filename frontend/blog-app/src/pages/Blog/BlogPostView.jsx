@@ -141,7 +141,9 @@ function BlogPostView() {
   }, [slug]);
   return (
     <BlogLayout>
-      {blogPostData && (
+      {!blogPostData ? (
+        <SkeletonLoader/>
+      ) : (
         <>
           <title>{blogPostData.title}</title>
 
@@ -266,7 +268,6 @@ function BlogPostView() {
                 likes={blogPostData.likes || 0}
                 comments={comments?.length || 0}
               />
-              
             </div>
 
             <div className="col-span-12 md:col-span-4">

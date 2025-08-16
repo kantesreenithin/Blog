@@ -9,6 +9,7 @@ const authRoutes = require("./routes/authRoutes");
 const BlogPostRoutes = require("./routes/blogPostRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+
 const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
