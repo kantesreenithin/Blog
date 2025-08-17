@@ -1,4 +1,5 @@
-export const BASE_URL = "https://blog-0jf6.onrender.com";
+export const BASE_URL = "https://blog-backend-theta-two.vercel.app/"
+// "https://blog-0jf6.onrender.com";
 //  "http://localhost:8000";
 
 export const API_PATHS = {
